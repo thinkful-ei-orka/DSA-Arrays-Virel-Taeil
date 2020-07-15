@@ -47,22 +47,15 @@ function maxSum(array){
 }
 
 function Merge (array1,array2){
-  let i, j = 0;
+  let i = 0;
+  let j = 0;
   let output = [];
-  while(i<array1.length && j<array2.length){
-    if(array1[i]===undefined){
-      output.push(array2[j]);
-      j++;
-    }
-    if(array2[j]===undefined){
+  while(i < array1.length || j < array2.length){
+    if(array1[i] < array2[j] || array2[j] === undefined){
       output.push(array1[i]);
       i++;
     }
-    if(array1[i]<array2[j]){
-      output.push(array1[i]);
-      i++;
-    }
-    else{
+    else if (array2[j] !== undefined){
       output.push(array2[j]);
       j++;
     }
@@ -70,7 +63,7 @@ function Merge (array1,array2){
   return output;
 }
 
-console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]))
+console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
 //[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
 // console.log(Filtering([1,2,3,4,5,6]))
 // console.log(maxSum([4, 6, -3, 5, -2, 1]))
