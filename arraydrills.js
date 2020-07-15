@@ -69,6 +69,7 @@ function Merge (array1,array2){
     }
     return output
 }
+
 console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]))
 //[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
 // console.log(Filtering([1,2,3,4,5,6]))
