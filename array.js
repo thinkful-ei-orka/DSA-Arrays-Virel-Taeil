@@ -78,7 +78,12 @@ function main(){
   arr.pop();
   arr.pop();
 
-  console.log(arr);
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.push("tauhida")
+  
+  console.log(arr.get(0));
 }
 
 main();
