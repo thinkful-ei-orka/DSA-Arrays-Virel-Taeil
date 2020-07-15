@@ -63,7 +63,23 @@ function Merge (array1,array2){
   return output;
 }
 
-console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
-//[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
+function RemoveChars(string, chars){
+  let butchered = '';
+  let charFound = false;
+  for(let i=0;i<string.length;i++){
+    charFound = false;
+    for(let j=0;j<chars.length;j++){
+      if(string[i]===chars[j]){
+        charFound = true;
+      }
+    }
+    if(!charFound){
+      butchered += string[i];
+    }
+  }
+  return butchered;
+}
+console.log(RemoveChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
+//console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
 // console.log(Filtering([1,2,3,4,5,6]))
 // console.log(maxSum([4, 6, -3, 5, -2, 1]))
