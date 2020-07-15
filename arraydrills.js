@@ -121,6 +121,16 @@ function array2D(array) {
   return array;
 }
 
+function rotation(str1,str2){
+  let output = false;
+  let matching;
+  for(let i=0;i<str1.length;i++){
+    for(let j=0;j<str2.length;j++){
+      if(str1[i]===str2[j])
+    }
+  }
+}
+
 
 // console.log(RemoveChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
 // console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
