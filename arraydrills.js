@@ -79,7 +79,57 @@ function RemoveChars(string, chars){
   }
   return butchered;
 }
-console.log(RemoveChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
-//console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
+
+function products(array) {
+  let output = [];
+  let product = 1;
+  for (let i = 0; i < array.length; i++) {
+    product = 1;
+    for (let j = 0; j < array.length; j++) {
+      if (i === j) {
+        // do nothing
+      } else {
+        product *= array[j];
+      }
+    }
+    output.push(product);
+  }
+  return output;
+}
+
+function array2D(array) {
+  let zeroRows = [];
+  let zeroCols = [];
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+      if (array[i][j] === 0) {
+        zeroRows[i] = true;
+        zeroCols[j] = true;
+      }
+    }
+  }
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+      if (zeroRows[i] || zeroCols[j]) {
+        array[i][j] = 0;
+      }
+    }
+  }
+
+  return array;
+}
+
+
+// console.log(RemoveChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
+// console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
 // console.log(Filtering([1,2,3,4,5,6]))
 // console.log(maxSum([4, 6, -3, 5, -2, 1]))
+// console.log(products([1, 3, 9, 4]));
+let inputArray = [[1,0,1,1,0],
+  [0,1,1,1,0],
+  [1,1,1,1,1],
+  [1,0,1,1,1],
+  [1,1,1,1,1]];
+console.log(array2D(inputArray));
