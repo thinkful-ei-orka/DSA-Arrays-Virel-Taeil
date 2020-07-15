@@ -122,24 +122,37 @@ function array2D(array) {
 }
 
 function rotation(str1,str2){
-  let output = false;
   let matching;
-  for(let i=0;i<str1.length;i++){
-    for(let j=0;j<str2.length;j++){
-      if(str1[i]===str2[j])
+  for (let i = 0; i < str1.length; i++) {
+    matching = true;
+    for (let j = i; j < str2.length + i; j++) {
+      // console.log(str1[j - i], str2[j % str2.length]);
+      if (matching) {
+        if (str1[j - i] === str2[j % str2.length]) {
+          matching = true;
+        } else {
+          matching = false;
+        }
+      }
+    }
+    if (matching) {
+      return true;
     }
   }
+  return false;
 }
-
 
 // console.log(RemoveChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
 // console.log(Merge([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
 // console.log(Filtering([1,2,3,4,5,6]))
 // console.log(maxSum([4, 6, -3, 5, -2, 1]))
 // console.log(products([1, 3, 9, 4]));
-let inputArray = [[1,0,1,1,0],
-  [0,1,1,1,0],
-  [1,1,1,1,1],
-  [1,0,1,1,1],
-  [1,1,1,1,1]];
-console.log(array2D(inputArray));
+// let inputArray = [[1,0,1,1,0],
+//   [0,1,1,1,0],
+//   [1,1,1,1,1],
+//   [1,0,1,1,1],
+//   [1,1,1,1,1]];
+// console.log(array2D(inputArray));
+
+console.log(rotation('amazon', 'azonma'));
+console.log(rotation('amazon', 'azonam'));
